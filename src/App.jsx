@@ -13,6 +13,7 @@ import { loader as homeLoader } from "./pages/Home";
 import { loader as singleAnimeLoader } from "./pages/SingleAnime";
 import { loader as searchLoader } from "./pages/Search";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Spinner from "./components/Spinner";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -67,11 +68,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <RouterProvider
         router={router}
-        fallbackElement={
-          <h4 style={{ marginTop: "20rem", textAlign: "center" }}>
-            Loading....
-          </h4>
-        }
+        fallbackElement={<Spinner />}
       ></RouterProvider>
     </QueryClientProvider>
   );
