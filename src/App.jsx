@@ -65,7 +65,10 @@ const router = createBrowserRouter(
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider
+        router={router}
+        fallbackElement={<h4>Loading....</h4>}
+      ></RouterProvider>
     </QueryClientProvider>
   );
 };
