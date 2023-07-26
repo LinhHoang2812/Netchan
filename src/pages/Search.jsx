@@ -82,8 +82,9 @@ const Wrapper = styled.div`
   @media (max-width: 800px) {
     margin-top: 7rem;
     grid-template-columns: 1fr 1fr;
+    padding: 0;
     .netchan-touch-card {
-      height: 180px;
+      height: 150px;
     }
   }
 

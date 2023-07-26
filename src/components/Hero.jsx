@@ -1,16 +1,39 @@
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
+import { useEffect } from "react";
 const Hero = ({ headlineAnime }) => {
   const { title, trailer, status, synopsis, mal_id } = headlineAnime;
   const youtube_id = trailer.youtube_id;
-  const opts = {
+  let opts = {
     width: 890,
     height: 520,
     playerVars: {
       autoplay: 1,
     },
   };
+  if (window.innerWidth < 800) {
+    opts = {
+      width: 0,
+      height: 0,
+      playerVars: {
+        autoplay: 0,
+      },
+    };
+  }
+
+  // useEffect(() => {
+  //   if (window.innerWidth < 800) {
+  //     opts = {
+  //       width: 0,
+  //       height: 0,
+  //       playerVars: {
+  //         autoplay: 0,
+  //       },
+  //     };
+  //   }
+  // }, []);
+
   return (
     <Wrapper>
       <div className="info">
