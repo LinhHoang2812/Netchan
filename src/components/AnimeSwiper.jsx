@@ -7,7 +7,17 @@ import SwiperCard from "./SwiperCard";
 SwiperCore.use([EffectCoverflow, Pagination]);
 const AnimeSwiper = ({ listAnime }) => {
   return (
-    <Swiper centeredSlides={false} slidesPerView={"2"} className="mySwiper">
+    <Swiper
+      centeredSlides={false}
+      slidesPerView={2}
+      breakpoints={{
+        800: {
+          width: 800,
+          slidesPerView: 4,
+        },
+      }}
+      className="mySwiper"
+    >
       {listAnime.map((anime) => (
         <SwiperSlide>
           <SwiperCard {...anime} key={anime.mal_id} />
