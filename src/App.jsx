@@ -67,7 +67,11 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <RouterProvider
         router={router}
-        fallbackElement={<h4>Loading....</h4>}
+        fallbackElement={
+          <h4 style={{ marginTop: "20rem", textAlign: "center" }}>
+            Loading....
+          </h4>
+        }
       ></RouterProvider>
     </QueryClientProvider>
   );
