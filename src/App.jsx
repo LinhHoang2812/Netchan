@@ -21,42 +21,47 @@ const queryClient = new QueryClient({
     },
   },
 });
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <HomeLayout />,
+      errorElement: <Error />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+          loader: homeLoader(queryClient),
+        },
+        {
+          path: "anime/:id",
+          element: <SingleAnime />,
+          loader: singleAnimeLoader(queryClient),
+        },
+        {
+          path: "search",
+          element: <Search />,
+          loader: searchLoader(queryClient),
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+        {
+          path: "list",
+          element: <List />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <HomeLayout />,
-    errorElement: <Error />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-        loader: homeLoader(queryClient),
-      },
-      {
-        path: "anime/:id",
-        element: <SingleAnime />,
-        loader: singleAnimeLoader(queryClient),
-      },
-      {
-        path: "search",
-        element: <Search />,
-        loader: searchLoader(queryClient),
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "list",
-        element: <List />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-    ],
-  },
-]);
+    basename: "/Netchan",
+  }
+);
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
