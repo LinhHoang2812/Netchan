@@ -238,7 +238,7 @@ Error generating stack: `+o.message+`
     height: 100%;
     border-radius: 5%;
   }
-`;os.use([IL,zL]);const ZL=({listAnime:e})=>_.jsx(mS,{centeredSlides:!1,slidesPerView:"2",className:"mySwiper",children:e.map(t=>_.jsx(gS,{children:P.createElement(yS,{...t,key:t.mal_id})}))}),ua=({anime:e,category:t})=>_.jsxs(eM,{children:[_.jsx("h4",{className:"category",children:t}),oS?_.jsx(ZL,{listAnime:e}):_.jsx(g_,{listAnime:e})]}),eM=vr.div`
+`;os.use([IL,zL]);const ZL=({listAnime:e})=>_.jsx(mS,{centeredSlides:!1,slidesPerView:2,breakpoints:{800:{width:800,slidesPerView:4}},className:"mySwiper",children:e.map(t=>_.jsx(gS,{children:P.createElement(yS,{...t,key:t.mal_id})}))}),ua=({anime:e,category:t})=>_.jsxs(eM,{children:[_.jsx("h4",{className:"category",children:t}),oS?_.jsx(ZL,{listAnime:e}):_.jsx(g_,{listAnime:e})]}),eM=vr.div`
   margin-top: 3rem;
 
   .category {
