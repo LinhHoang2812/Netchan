@@ -95,11 +95,13 @@ const Navbar = () => {
                 placeholder="anime name..."
                 name="search"
                 onChange={handleChangeInput}
+                autoFocus
               />
             </form>
           )}
           {displaySearch || (
             <button
+              className="nav-search-btn"
               onClick={() => {
                 setSearch(true);
               }}
@@ -107,19 +109,13 @@ const Navbar = () => {
               <FaSearch className="icon" />
             </button>
           )}
-
-          {/* <NavLink to="/login">
-            <FaUser className="icon" />
-          </NavLink> */}
         </div>
       </div>
       <aside className={isToggle ? "sidebar show-sidebar" : "sidebar"}>
         <NavLink to="/" className="nav-link">
           Home
         </NavLink>
-        {/* <NavLink to="/list" className="nav-link">
-          Your List
-        </NavLink> */}
+
         <NavLink to="/about" className="nav-link">
           About
         </NavLink>
@@ -144,7 +140,7 @@ const Wrapper = styled.nav`
     display: none;
   }
   .nav-center {
-    padding: 0 2rem;
+    margin: 0 2rem;
     display: flex;
     justify-content: space-between;
   }
@@ -248,14 +244,18 @@ const Wrapper = styled.nav`
     .show-sidebar {
       transform: translateX(0);
     }
-    .nav-right {
-      gap: 0.5rem;
+    .nav-center {
+      margin: 0;
     }
     .input-container {
-      position: fixed;
-      top: 3rem;
-      left: 50%;
-      transform: translateX(-50%);
+      width: 80% !important;
+      height: 25px !important;
+    }
+    .icon {
+      font-size: 1.2rem;
+    }
+    input {
+      font-size: 0.9rem;
     }
   }
 `;
